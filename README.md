@@ -1,4 +1,4 @@
-# Puppeteer + λ + Node 10.x + Layer = Fetherweight Heavy Lifting.
+# Puppeteer + λ + Node 10.x + Layer = Featherweight Heavy Lifting.
 
 A 'serverless' example of using [Chrome AWS Lambda](https://github.com/alixaxel/chrome-aws-lambda.git) as an [AWS Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html).  This project uses [serverless framework](https://serverless.com/) to manage deployment.  You can directly use the "buildchromelayer.sh" script packaged in this project to create a pre-built layer.
 
