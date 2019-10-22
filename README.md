@@ -2,7 +2,7 @@
 
 A 'serverless' example of using [Chrome AWS Lambda](https://github.com/alixaxel/chrome-aws-lambda.git) as an [AWS Lambda Layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html).  This project uses [serverless framework](https://serverless.com/) to manage deployment.  You can directly use the "buildchromelayer.sh" script packaged in this project to create a pre-built layer.
 
-### Objectives 
+## Objectives 
 1. Puppeteer should be usable in AWS Nodejs 10.x lambda runtime.  (this problem is solved nicely by @alixaxel)
 2. We want to use chrome through a layer.  This choice will make sense if you have many lambdas that needs Puppeteer.
 3. Function deployments should be as light as possible.  We don't want to pull any extra luggage in terms of chrome binaries.
@@ -20,8 +20,7 @@ A 'serverless' example of using [Chrome AWS Lambda](https://github.com/alixaxel/
     Unpacking objects: 100% (34/34), done.
     make: '../chrome-layer/chrome_aws_node10x.zip' is up to date.
     -rw-rw-r-- 1 boni boni 41M Oct 22 11:54 ../chrome-layer/chrome_aws_node10x.zip
-
-```
+    ```
 3. Deploy code to AWS Console.
 4. Login to Lambda Console. Select deployed function.  Use Test option to confirm the deployment works.
     1. Create a new Test event
@@ -34,7 +33,6 @@ A 'serverless' example of using [Chrome AWS Lambda](https://github.com/alixaxel/
     3. Check Output
 
 ## Gotchas
-
 1. in serverless.yml I am using plugin [serverless-plugin-include-dependencies](https://www.npmjs.com/package/serverless-plugin-include-dependencies) to keep the function sizes as small as possible.
 
 2. in serverless.yml we are excluding all heavy weights from getting into the lambda thorugh appropriate packaging.  This helps to keep the sizes of lambda small and manageable.
