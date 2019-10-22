@@ -1,0 +1,29 @@
+service: chrome-aws-lambda-test
+provider:
+  name: aws
+  runtime: nodejs10.x
+  deploymentBucket:
+      name: slsdeploy-${opt:stage}
+      serverSideEncryption: AES256  
+custom:
+  stage: ${opt:stage, self:provider.stage}
+plugins:
+  - serverless-plugin-include-dependencies
+  - serverless-deployment-bucket
+package:
+ exclude:
+   - layer/**
+   - layer1/**
+   - node_modules/**
+   - node_modules/**/chrome-aws-lambda/**
+layers:
+  chromePreBuilt:
+    package:
+      artifact: chrome-layer/chrome_aws_node10x.zip    
+functions:
+  loadWithChromeAwsLambda:
+    timeout: 120
+    memorySize: 1024  
+    layers:
+      - { Ref: ChromePreBuiltLambdaLayer}
+    handler: overloadedpuppeteer.loadChrome
