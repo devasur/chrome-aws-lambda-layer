@@ -4,4 +4,4 @@ jspm_packages
 
 # Serverless directories
 .serverless
-.chrome-layer
+chrome-layer/**
