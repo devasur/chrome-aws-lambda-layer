@@ -57,7 +57,7 @@ A 'serverless' example of using [Chrome AWS Lambda](https://github.com/alixaxel/
     layers:
         chromePreBuilt:
             package:
-            artifact: chrome-layer/chrome_aws_node10x.zip    
+                artifact: chrome-layer/chrome_aws_node10x.zip    
 
     ```
 
